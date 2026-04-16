@@ -11,6 +11,50 @@ Gain more practical experience by using this repository that contains a Python W
 1. Enable your [GitHub Copilot service](https://github.com/github-copilot/signup)
 1. Open [this repository with Codespaces](https://codespaces.new/MicrosoftDocs/mslearn-copilot-codespaces-python)
 
+## Getting Started
+
+### Prerequisites
+
+- Python 3.8+
+- pip
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/bendikwe/mslearn-advanced-copilot.git
+   cd mslearn-advanced-copilot
+   ```
+
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Running the API
+
+Start the development server with:
+
+```bash
+uvicorn main:app --reload
+```
+
+The API will be available at [http://localhost:8000](http://localhost:8000). It automatically redirects to the interactive API docs at `/docs`.
+
+### Running Tests
+
+```bash
+pytest
+```
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/countries` | List all available countries |
+| GET | `/countries/{country}` | List cities for a country |
+| GET | `/countries/{country}/{city}/{month}` | Get historical high/low weather for a city and month |
+
 ## 💪🏽 Exercise
 The current API is not exposing country/{country} which needs to be implemented to list cities. The route should allow only GET HTTP requests with a JSON response providing information from the historical high and low for that country, city, and given month.
 
